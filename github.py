@@ -27,6 +27,7 @@ for page in range(1,page_count+1):
         print("Github API rate limited Reached !! ... retrying in 60 seconds")
         page = page-2
         time.sleep(40)
+        print("resuming :)")
     else:
         text_json = json.loads(r.text)
         text_json = text_json["payload"]["results"]
@@ -40,4 +41,3 @@ for page in range(1,page_count+1):
                 count += 1
             csv_writer.writerow(profile.values())
         time.sleep(2)
-
