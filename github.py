@@ -5,7 +5,7 @@ import csv
 
 URLS = { "Github": "https://github.com/search"}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'}
-username_input = input("Enter username: ").replace(" ", "+")
+username_input = input("Enter username: ").replace(" ", "+") # FIXME: Input
 
 
 r = request.get(URLS["Github"], f"q={username_input}&type=users", headers=headers)
@@ -18,7 +18,7 @@ profile = text_json["payload"]["results"]
 
 print(f"Page count: {page_count}")
 print(f"Result count: {result_count}")
-output_file = open("out.csv", "w")
+output_file = open("out.csv", "w") # FIXME Input
 csv_writer = csv.writer(output_file)
 
 for page in range(1,page_count+1):
